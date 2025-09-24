@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Download, Mail, MapPin, Calendar, Briefcase, CheckCircle } from 'lucide-react'
+import { Download, Mail, MapPin, Calendar, Briefcase, CheckCircle, Eye } from 'lucide-react'
 
 const Hero = () => {
   // Helper function to get correct asset path for GitHub Pages
@@ -41,8 +41,8 @@ const Hero = () => {
     link.click()
   }
 
-  const scrollToContact = () => {
-    const element = document.querySelector('#contact')
+  const scrollToProjects = () => {
+    const element = document.querySelector('#projects')
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
@@ -64,19 +64,19 @@ const Hero = () => {
                 variants={itemVariants}
                 className="text-3xl sm:text-4xl md:text-6xl font-heading font-bold leading-tight"
               >
-                <span className="gradient-text">Shubham Sharma</span>
+                <span className="gradient-text">Hi, I'm Shubham Sharma</span>
               </motion.h1>
               <motion.p 
                 variants={itemVariants}
                 className="text-lg sm:text-xl md:text-2xl text-neutral-600 font-medium"
               >
-                MBA Finance
+                Finance Professional | AI & Automation in Business
               </motion.p>
               <motion.p 
                 variants={itemVariants}
                 className="text-base sm:text-lg text-neutral-500 max-w-2xl"
               >
-                Finance professional specializing in AI-driven automation and strategic consulting. Transforming businesses through data analytics and innovative technology solutions.
+                Driving smarter financial decisions through data, strategy, and intelligent automation.
               </motion.p>
             </motion.div>
 
@@ -115,16 +115,16 @@ const Hero = () => {
                 className="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 sm:space-x-3"
               >
                 <Download size={18} className="sm:w-5 sm:h-5" />
-                <span className="text-sm sm:text-base">Download CV</span>
+                <span className="text-sm sm:text-base">Download Resume</span>
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={scrollToContact}
+                onClick={scrollToProjects}
                 className="border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 sm:space-x-3"
               >
-                <Mail size={18} className="sm:w-5 sm:h-5" />
-                <span className="text-sm sm:text-base">Contact Me</span>
+                <Briefcase size={18} className="sm:w-5 sm:h-5" />
+                <span className="text-sm sm:text-base">View My Work</span>
               </motion.button>
             </motion.div>
           </div>

@@ -10,75 +10,74 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      title: 'Senior Financial Analyst',
-      company: 'TechCorp Solutions',
-      location: 'Mumbai, India',
-      period: '2022 - Present',
+      title: 'Strategic Consultant',
+      company: 'Comptech Compressors',
+      location: 'India',
+      period: 'Apr 2025 – Present',
       type: 'Full-time',
-      description: 'Leading financial analysis and strategic planning initiatives for a growing technology company.',
+      description: 'Leading strategic initiatives focused on AI-driven automation and performance optimization.',
       achievements: [
-        'Improved financial forecasting accuracy by 25% through advanced modeling techniques',
-        'Led cross-functional team of 8 members in implementing new financial systems',
-        'Reduced operational costs by 15% through process optimization and automation',
-        'Developed comprehensive budget models that supported 30% revenue growth',
-        'Mentored 3 junior analysts and established best practices for financial reporting',
-        'Collaborated with C-suite executives on strategic planning and investment decisions'
+        'Designed and built a Performance Tracking & Management Web App (Django + React) for real-time financial & operational reporting',
+        'Conducted quantitative & qualitative studies to analyze efficiency and cost optimization opportunities',
+        'Developed Comptech Genie AI chatbot to automate product queries and customer interactions'
       ],
-      skills: ['Financial Modeling', 'Strategic Planning', 'Team Leadership', 'Process Optimization', 'Data Analysis']
+      skills: ['Django', 'React', 'AI Development', 'Performance Analytics', 'Strategic Consulting']
     },
     {
       id: 2,
-      title: 'Operations Manager',
-      company: 'Global Finance Ltd',
-      location: 'Delhi, India',
-      period: '2020 - 2022',
+      title: 'HR & Operations Manager',
+      company: 'Comptech Compressors',
+      location: 'India',
+      period: 'Jan 2021 – Oct 2021',
       type: 'Full-time',
-      description: 'Managed day-to-day operations and implemented efficiency improvements across multiple departments.',
+      description: 'Managed HR operations and operational efficiency improvements.',
       achievements: [
-        'Streamlined operational processes resulting in 20% efficiency improvement',
-        'Implemented new quality control systems reducing errors by 30%',
-        'Led digital transformation initiative affecting 200+ employees',
-        'Managed vendor relationships and negotiated contracts saving $500K annually',
-        'Developed and executed training programs for 50+ team members',
-        'Achieved 95% customer satisfaction rating through improved service delivery'
+        'Overhauled workflows and productivity metrics to improve resource utilization and reduce operational inefficiencies',
+        'Introduced performance management frameworks aligned with financial outcomes'
       ],
-      skills: ['Operations Management', 'Process Improvement', 'Vendor Management', 'Team Development', 'Quality Control']
+      skills: ['Operations Management', 'HR Leadership', 'Performance Management', 'Process Optimization', 'Workflow Design']
     },
     {
       id: 3,
-      title: 'Financial Analyst',
-      company: 'Startup Ventures',
-      location: 'Bangalore, India',
-      period: '2019 - 2020',
+      title: 'Talent Manager',
+      company: 'Rayqube Future Tech',
+      location: 'India',
+      period: 'Jun 2019 – Dec 2019',
       type: 'Full-time',
-      description: 'Provided financial analysis and support for early-stage startup companies.',
+      description: 'Managed talent acquisition and administrative operations.',
       achievements: [
-        'Created financial models for 10+ startup companies seeking funding',
-        'Conducted market research and competitive analysis for investment decisions',
-        'Prepared investor presentations and pitch decks',
-        'Assisted in due diligence processes for potential acquisitions',
-        'Developed KPI dashboards for tracking business performance',
-        'Supported fundraising efforts that resulted in $2M+ in capital raised'
+        'Managed budgeting, resource allocation, and process automation in HR & admin',
+        'Negotiated with Govt. of Rajasthan (Dept. of IT) to secure and manage a major corporate event presence'
       ],
-      skills: ['Financial Modeling', 'Market Research', 'Investment Analysis', 'Presentation Skills', 'Due Diligence']
+      skills: ['Talent Management', 'Budget Management', 'Government Relations', 'Process Automation', 'Event Management']
     },
     {
       id: 4,
-      title: 'Finance Intern',
-      company: 'Investment Bank Partners',
-      location: 'Mumbai, India',
-      period: '2018 - 2019',
-      type: 'Internship',
-      description: 'Gained hands-on experience in investment banking and financial analysis.',
+      title: 'External Relations Manager',
+      company: 'WeddingsOnly.in',
+      location: 'India',
+      period: 'Feb 2019 – May 2019',
+      type: 'Full-time',
+      description: 'Worked on business strategy and revenue growth initiatives.',
       achievements: [
-        'Assisted in preparation of financial statements and reports',
-        'Conducted research on market trends and industry analysis',
-        'Supported senior analysts in client presentations',
-        'Learned advanced Excel and financial modeling techniques',
-        'Participated in due diligence processes for M&A transactions',
-        'Contributed to team projects that improved department efficiency by 10%'
+        'Worked on business strategy, pitch decks, and revenue growth models directly with the CEO',
+        'Enhanced UI/UX user flows for better customer conversion'
       ],
-      skills: ['Financial Reporting', 'Market Analysis', 'Excel', 'Research', 'Client Relations']
+      skills: ['Business Strategy', 'Revenue Growth', 'Pitch Decks', 'UI/UX', 'Customer Conversion']
+    },
+    {
+      id: 5,
+      title: 'Vice President Talent Management',
+      company: 'AIESEC Jaipur',
+      location: 'Jaipur, India',
+      period: '2015 – 2017',
+      type: 'Leadership',
+      description: 'Led talent management and leadership development initiatives.',
+      achievements: [
+        'Designed HR & L&D systems that scaled chapter performance to a historic 501 exchanges (first time crossing 300 in 22 years)',
+        'Experience in analytics, auditing, and leadership development across multiple chapters'
+      ],
+      skills: ['Leadership Development', 'HR Systems', 'Analytics', 'Auditing', 'Chapter Management']
     }
   ]
 
@@ -135,7 +134,7 @@ const Experience = () => {
           {/* Timeline */}
           <div className="relative">
             {/* Timeline Line - Hidden on mobile */}
-            <div className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-200 via-primary-400 to-primary-200"></div>
+            <div className="hidden md:block absolute left-8 top-8 w-0.5 bg-gradient-to-b from-primary-200 via-primary-400 to-primary-200" style={{height: 'calc(100% - 2rem)'}}></div>
 
             <div className="space-y-6 md:space-y-8">
               {experiences.map((exp, index) => (

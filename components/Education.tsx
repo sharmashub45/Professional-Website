@@ -9,16 +9,16 @@ const Education = () => {
       id: 1,
       degree: 'Master of Business Administration (MBA)',
       specialization: 'Finance',
-      institution: 'Indian Institute of Management (IIM)',
-      location: 'Ahmedabad, India',
+      institution: 'K J Somaiya Institute of Management',
+      location: 'Mumbai, India',
       period: '2017 - 2019',
       gpa: '8.5/10',
-      description: 'Specialized in Finance with focus on investment analysis, risk management, and financial modeling. Completed thesis on "Impact of Digital Transformation on Financial Services".',
+      description: 'Specialized in Finance with focus on investment analysis, risk management, and financial modeling. Gained comprehensive understanding of financial markets, corporate finance, and strategic business management.',
       achievements: [
-        'Dean\'s List for Academic Excellence',
-        'President of Finance Club',
-        'Won National Business Case Competition',
-        'Published research paper in Finance Journal'
+        'Specialized in Finance with comprehensive business management training',
+        'Developed expertise in financial analysis and strategic planning',
+        'Gained practical experience in investment analysis and risk management',
+        'Built strong foundation in corporate finance and business strategy'
       ],
       relevant_courses: [
         'Advanced Financial Management',
@@ -26,31 +26,31 @@ const Education = () => {
         'Risk Management & Derivatives',
         'Corporate Finance',
         'Financial Modeling & Valuation',
-        'International Finance'
+        'Strategic Business Management'
       ]
     },
     {
       id: 2,
       degree: 'Bachelor of Technology (B.Tech)',
-      specialization: 'Computer Science Engineering',
-      institution: 'Delhi Technological University',
-      location: 'Delhi, India',
+      specialization: 'Mechanical Engineering',
+      institution: 'Swami Keshvanand Institute of Technology',
+      location: 'Jaipur, India',
       period: '2013 - 2017',
       gpa: '8.2/10',
-      description: 'Strong foundation in computer science with focus on data structures, algorithms, and software engineering. Developed analytical and problem-solving skills.',
+      description: 'Strong foundation in mechanical engineering with focus on systems design, operations management, and analytical problem-solving. Developed technical and analytical skills that complement business management.',
       achievements: [
-        'University Merit Scholarship',
-        'Final Year Project Award',
-        'Active member of Coding Club',
-        'Participated in multiple hackathons'
+        'Comprehensive understanding of mechanical systems and operations',
+        'Developed analytical and problem-solving skills',
+        'Gained experience in project management and system optimization',
+        'Built strong foundation in quantitative analysis'
       ],
       relevant_courses: [
-        'Data Structures & Algorithms',
-        'Database Management Systems',
-        'Software Engineering',
-        'Computer Networks',
-        'Operating Systems',
-        'Machine Learning Basics'
+        'Mechanical Systems Design',
+        'Operations Research',
+        'Engineering Mathematics',
+        'Industrial Engineering',
+        'Project Management',
+        'System Analysis & Optimization'
       ]
     }
   ]

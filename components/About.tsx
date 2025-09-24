@@ -29,23 +29,23 @@ const About = () => {
   const highlights = [
     {
       icon: Target,
-      title: 'Strategic Planning',
-      description: 'Expert in developing comprehensive financial strategies and operational plans',
+      title: 'AI & Automation',
+      description: 'Specializing in applying AI and automation to solve finance and business challenges',
     },
     {
       icon: TrendingUp,
-      title: 'Performance Optimization',
-      description: 'Proven track record of improving efficiency and driving growth',
+      title: 'Financial Analysis',
+      description: 'Expert in financial & data analysis with performance tracking systems',
     },
     {
       icon: Users,
-      title: 'Team Leadership',
-      description: 'Experienced in leading cross-functional teams and mentoring professionals',
+      title: 'Technology Integration',
+      description: 'Bridging finance expertise with technology for data-driven decisions',
     },
     {
       icon: Award,
-      title: 'Industry Recognition',
-      description: 'Recognized for excellence in finance and operations management',
+      title: 'Python & Trading',
+      description: 'Exploring quantitative trading strategies and backtesting using Python',
     },
   ]
 
@@ -65,7 +65,7 @@ const About = () => {
               About <span className="gradient-text">Me</span>
             </h2>
             <p className="text-lg text-neutral-600">
-              A dedicated finance professional with a passion for driving organizational success through strategic thinking and innovative solutions.
+              An MBA in Finance with expertise in operations, HR leadership, and consulting, now focused on applying AI and automation to solve challenges in finance and business strategy.
             </p>
           </motion.div>
 
@@ -76,15 +76,18 @@ const About = () => {
               <div className="card">
                 <h3 className="text-lg sm:text-xl font-heading font-semibold mb-3 sm:mb-4">Professional Summary</h3>
                 <p className="text-sm sm:text-base text-neutral-600 mb-3 sm:mb-4">
-                  As an MBA Finance graduate with extensive experience in financial analysis and operations management, 
-                  I bring a unique blend of analytical rigor and strategic vision to every project. My expertise spans 
-                  across financial modeling, process optimization, and team leadership.
+                  I am an MBA in Finance with a background in operations, HR leadership, and consulting, now focused on applying AI and automation to solve challenges in finance and business strategy.
                 </p>
-                <p className="text-sm sm:text-base text-neutral-600">
-                  I am passionate about leveraging data-driven insights to solve complex business challenges and 
-                  drive sustainable growth. My approach combines technical expertise with strong interpersonal 
-                  skills, making me an effective leader and collaborator.
+                <p className="text-sm sm:text-base text-neutral-600 mb-3 sm:mb-4">
+                  My work spans financial & data analysis, performance tracking systems, and AI-driven automation tools. I bring a unique mix of finance expertise and technology integration skills to help organizations make data-driven, efficient, and scalable decisions.
                 </p>
+                <div className="mt-4">
+                  <h4 className="font-semibold text-neutral-900 mb-2 text-sm sm:text-base">Currently, I am:</h4>
+                  <ul className="text-sm sm:text-base text-neutral-600 space-y-1">
+                    <li>• Exploring quantitative trading & backtesting strategies using Python.</li>
+                    <li>• Building AI-enabled tools to improve decision-making and performance management.</li>
+                  </ul>
+                </div>
               </div>
 
               {/* Quick Stats */}
