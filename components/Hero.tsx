@@ -4,6 +4,12 @@ import { motion } from 'framer-motion'
 import { Download, Mail, MapPin, Calendar, Briefcase, CheckCircle } from 'lucide-react'
 
 const Hero = () => {
+  // Helper function to get correct asset path for GitHub Pages
+  const getAssetPath = (path: string) => {
+    const basePath = process.env.NODE_ENV === 'production' ? '/Professional-Website' : ''
+    return `${basePath}${path}`
+  }
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -30,7 +36,7 @@ const Hero = () => {
   const handleDownloadCV = () => {
     // In a real implementation, this would download the actual CV
     const link = document.createElement('a')
-    link.href = '/Shubham_Sharma_CV.pdf'
+    link.href = getAssetPath('/Shubham_Sharma_CV.pdf')
     link.download = 'Shubham_Sharma_CV.pdf'
     link.click()
   }
@@ -135,7 +141,7 @@ const Hero = () => {
             >
               <div className="w-80 h-80 mx-auto rounded-full overflow-hidden shadow-2xl border-4 border-white">
                 <img
-                  src="/Profile picture.png"
+                  src={getAssetPath("/Profile picture.png")}
                   alt="Shubham Sharma"
                   className="w-full h-full object-cover"
                   onError={(e) => {
