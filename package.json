@@ -2,6 +2,7 @@
   "name": "shubham-sharma-resume",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sharmashub45.github.io/Professional-Website",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
