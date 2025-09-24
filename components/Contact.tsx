@@ -119,10 +119,10 @@ const Contact = () => {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Form */}
             <motion.div variants={itemVariants} className="card">
-              <h3 className="text-xl font-heading font-semibold mb-6">Send me a message</h3>
+              <h3 className="text-lg sm:text-xl font-heading font-semibold mb-4 sm:mb-6">Send me a message</h3>
               
               {isSubmitted ? (
                 <motion.div
@@ -135,8 +135,8 @@ const Contact = () => {
                   <p className="text-neutral-600">Thank you for reaching out. I'll get back to you soon.</p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
                         Full Name *
@@ -148,7 +148,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-sm sm:text-base"
                         placeholder="Your full name"
                       />
                     </div>
@@ -163,7 +163,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-sm sm:text-base"
                         placeholder="your.email@example.com"
                       />
                     </div>
@@ -180,7 +180,7 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-sm sm:text-base"
                       placeholder="What's this about?"
                     />
                   </div>
@@ -195,8 +195,8 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       required
-                      rows={5}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
+                      rows={4}
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none text-sm sm:text-base"
                       placeholder="Tell me about your project, opportunity, or just say hello..."
                     />
                   </div>
@@ -225,23 +225,23 @@ const Contact = () => {
             </motion.div>
 
             {/* Contact Information */}
-            <motion.div variants={itemVariants} className="space-y-8">
+            <motion.div variants={itemVariants} className="space-y-6 sm:space-y-8">
               {/* Contact Cards */}
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {contactInfo.map((info, index) => (
                   <motion.a
                     key={index}
                     href={info.link}
                     whileHover={{ scale: 1.02 }}
-                    className="card flex items-start space-x-4 hover:shadow-md transition-all duration-300"
+                    className="card flex items-start space-x-3 sm:space-x-4 hover:shadow-md transition-all duration-300"
                   >
-                    <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <info.icon className="text-primary-600" size={24} />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <info.icon className="text-primary-600" size={20} />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-neutral-900 mb-1">{info.title}</h4>
-                      <p className="text-primary-600 font-medium mb-1">{info.value}</p>
-                      <p className="text-sm text-neutral-600">{info.description}</p>
+                      <h4 className="font-semibold text-neutral-900 mb-1 text-sm sm:text-base">{info.title}</h4>
+                      <p className="text-primary-600 font-medium mb-1 text-sm sm:text-base">{info.value}</p>
+                      <p className="text-xs sm:text-sm text-neutral-600">{info.description}</p>
                     </div>
                   </motion.a>
                 ))}
@@ -252,20 +252,20 @@ const Contact = () => {
                 whileHover={{ scale: 1.02 }}
                 className="card bg-gradient-to-r from-primary-50 to-primary-100 border-primary-200"
               >
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
-                    <Download className="text-white" size={24} />
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary-600 rounded-full flex items-center justify-center">
+                    <Download className="text-white" size={20} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-semibold text-neutral-900 mb-1">Download CV</h4>
-                    <p className="text-sm text-neutral-600 mb-3">
+                    <h4 className="font-semibold text-neutral-900 mb-1 text-sm sm:text-base">Download CV</h4>
+                    <p className="text-xs sm:text-sm text-neutral-600 mb-2 sm:mb-3">
                       Get a copy of my detailed resume in PDF format
                     </p>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={handleDownloadCV}
-                      className="btn-primary text-sm px-4 py-2"
+                      className="btn-primary text-xs sm:text-sm px-3 sm:px-4 py-2"
                     >
                       Download PDF
                     </motion.button>

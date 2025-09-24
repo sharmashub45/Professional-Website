@@ -134,20 +134,20 @@ const Experience = () => {
 
           {/* Timeline */}
           <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-200 via-primary-400 to-primary-200"></div>
+            {/* Timeline Line - Hidden on mobile */}
+            <div className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-200 via-primary-400 to-primary-200"></div>
 
-            <div className="space-y-8">
+            <div className="space-y-6 md:space-y-8">
               {experiences.map((exp, index) => (
                 <motion.div
                   key={exp.id}
                   variants={itemVariants}
-                  className="relative flex items-start space-x-8"
+                  className="relative flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-8"
                 >
                   {/* Timeline Node */}
-                  <div className="relative z-10 flex-shrink-0">
-                    <div className="w-16 h-16 bg-white border-4 border-primary-600 rounded-full flex items-center justify-center shadow-lg">
-                      <Building className="text-primary-600" size={24} />
+                  <div className="relative z-10 flex-shrink-0 flex justify-center md:justify-start">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-white border-4 border-primary-600 rounded-full flex items-center justify-center shadow-lg">
+                      <Building className="text-primary-600" size={20} />
                     </div>
                   </div>
 
@@ -158,19 +158,19 @@ const Experience = () => {
                   >
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
                       <div className="flex-1">
-                        <h3 className="text-xl font-heading font-semibold text-neutral-900 mb-1">
+                        <h3 className="text-lg md:text-xl font-heading font-semibold text-neutral-900 mb-1">
                           {exp.title}
                         </h3>
-                        <p className="text-lg text-primary-600 font-medium mb-2">
+                        <p className="text-base md:text-lg text-primary-600 font-medium mb-2">
                           {exp.company}
                         </p>
-                        <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 mb-4">
+                        <div className="flex flex-wrap items-center gap-2 md:gap-4 text-xs md:text-sm text-neutral-600 mb-4">
                           <div className="flex items-center space-x-1">
-                            <Calendar size={16} />
+                            <Calendar size={14} className="md:w-4 md:h-4" />
                             <span>{exp.period}</span>
                           </div>
                           <div className="flex items-center space-x-1">
-                            <MapPin size={16} />
+                            <MapPin size={14} className="md:w-4 md:h-4" />
                             <span>{exp.location}</span>
                           </div>
                           <span className="px-2 py-1 bg-primary-100 text-primary-700 rounded-full text-xs">
@@ -180,14 +180,14 @@ const Experience = () => {
                       </div>
                     </div>
 
-                    <p className="text-neutral-600 mb-4">{exp.description}</p>
+                    <p className="text-sm md:text-base text-neutral-600 mb-4">{exp.description}</p>
 
                     {/* Skills Tags */}
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-1 md:gap-2 mb-4">
                       {exp.skills.map((skill, skillIndex) => (
                         <span
                           key={skillIndex}
-                          className="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm"
+                          className="px-2 md:px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-xs md:text-sm"
                         >
                           {skill}
                         </span>

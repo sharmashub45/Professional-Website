@@ -132,20 +132,20 @@ const Skills = () => {
           </motion.div>
 
           {/* Skill Category Tabs */}
-          <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mb-8">
+          <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 sm:mb-8">
             {Object.entries(skillCategories).map(([key, category]) => (
               <motion.button
                 key={key}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveTab(key)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                className={`flex items-center space-x-1 sm:space-x-2 px-3 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 text-sm sm:text-base ${
                   activeTab === key
                     ? 'bg-primary-600 text-white shadow-lg'
                     : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
                 }`}
               >
-                <category.icon size={20} />
+                <category.icon size={16} className="sm:w-5 sm:h-5" />
                 <span>{category.title}</span>
               </motion.button>
             ))}
@@ -157,7 +157,7 @@ const Skills = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           >
             {skillCategories[activeTab as keyof typeof skillCategories].skills.map((skill, index) => (
               <motion.div
@@ -165,17 +165,17 @@ const Skills = () => {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="card group cursor-pointer"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-3">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${skillCategories[activeTab as keyof typeof skillCategories].color}`}>
-                      <skill.icon size={20} />
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
+                  <div className="flex items-center space-x-2 sm:space-x-3">
+                    <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center ${skillCategories[activeTab as keyof typeof skillCategories].color}`}>
+                      <skill.icon size={16} className="sm:w-5 sm:h-5" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-neutral-900">{skill.name}</h3>
-                      <p className="text-sm text-neutral-500">{getLevelText(skill.level)}</p>
+                      <h3 className="font-semibold text-neutral-900 text-sm sm:text-base">{skill.name}</h3>
+                      <p className="text-xs sm:text-sm text-neutral-500">{getLevelText(skill.level)}</p>
                     </div>
                   </div>
-                  <span className="text-lg font-bold text-neutral-700">{skill.level}%</span>
+                  <span className="text-base sm:text-lg font-bold text-neutral-700">{skill.level}%</span>
                 </div>
 
                 {/* Progress Bar */}
@@ -189,7 +189,7 @@ const Skills = () => {
                 </div>
 
                 {/* Skill Description */}
-                <p className="text-sm text-neutral-600 group-hover:text-neutral-700 transition-colors">
+                <p className="text-xs sm:text-sm text-neutral-600 group-hover:text-neutral-700 transition-colors">
                   {activeTab === 'finance' && 'Advanced financial analysis and modeling expertise'}
                   {activeTab === 'operations' && 'Proven track record in operational excellence'}
                   {activeTab === 'tools' && 'Proficient in industry-standard tools and technologies'}
@@ -200,36 +200,36 @@ const Skills = () => {
           </motion.div>
 
           {/* Additional Skills Section */}
-          <motion.div variants={itemVariants} className="bg-neutral-50 rounded-2xl p-8">
-            <h3 className="text-xl font-heading font-semibold mb-6 text-center">Additional Competencies</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div variants={itemVariants} className="bg-neutral-50 rounded-2xl p-4 sm:p-6 lg:p-8">
+            <h3 className="text-lg sm:text-xl font-heading font-semibold mb-4 sm:mb-6 text-center">Additional Competencies</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-primary-600 font-bold text-lg">CFA</span>
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                  <span className="text-primary-600 font-bold text-sm sm:text-lg">CFA</span>
                 </div>
-                <h4 className="font-semibold mb-1">CFA Level 1</h4>
-                <p className="text-sm text-neutral-600">Chartered Financial Analyst</p>
+                <h4 className="font-semibold mb-1 text-sm sm:text-base">CFA Level 1</h4>
+                <p className="text-xs sm:text-sm text-neutral-600">Chartered Financial Analyst</p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-green-600 font-bold text-lg">PMP</span>
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                  <span className="text-green-600 font-bold text-sm sm:text-lg">PMP</span>
                 </div>
-                <h4 className="font-semibold mb-1">PMP Certified</h4>
-                <p className="text-sm text-neutral-600">Project Management Professional</p>
+                <h4 className="font-semibold mb-1 text-sm sm:text-base">PMP Certified</h4>
+                <p className="text-xs sm:text-sm text-neutral-600">Project Management Professional</p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-purple-600 font-bold text-lg">Six</span>
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                  <span className="text-purple-600 font-bold text-sm sm:text-lg">Six</span>
                 </div>
-                <h4 className="font-semibold mb-1">Six Sigma</h4>
-                <p className="text-sm text-neutral-600">Green Belt Certified</p>
+                <h4 className="font-semibold mb-1 text-sm sm:text-base">Six Sigma</h4>
+                <p className="text-xs sm:text-sm text-neutral-600">Green Belt Certified</p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-orange-600 font-bold text-lg">AI</span>
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                  <span className="text-orange-600 font-bold text-sm sm:text-lg">AI</span>
                 </div>
-                <h4 className="font-semibold mb-1">AI & Analytics</h4>
-                <p className="text-sm text-neutral-600">Machine Learning Basics</p>
+                <h4 className="font-semibold mb-1 text-sm sm:text-base">AI & Analytics</h4>
+                <p className="text-xs sm:text-sm text-neutral-600">Machine Learning Basics</p>
               </div>
             </div>
           </motion.div>
