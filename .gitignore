@@ -8,6 +8,7 @@ yarn-error.log*
 .next/
 out/
 build/
+/index.html
 
 # Production
 dist/

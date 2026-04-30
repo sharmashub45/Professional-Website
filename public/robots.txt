@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sharmashub45.github.io/Professional-Website/sitemap.xml
