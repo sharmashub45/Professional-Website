@@ -26,12 +26,12 @@ const Skills = () => {
       icon: Calculator,
       color: 'bg-blue-100 text-blue-600',
       skills: [
-        { name: 'Financial Modeling', level: 95, icon: BarChart3 },
-        { name: 'Investment Analysis', level: 90, icon: TrendingUp },
-        { name: 'Risk Management', level: 85, icon: Shield },
-        { name: 'Budget Planning', level: 92, icon: Target },
-        { name: 'Financial Reporting', level: 88, icon: FileText },
-        { name: 'Valuation Methods', level: 87, icon: Calculator },
+        { name: 'Financial Modeling', icon: BarChart3 },
+        { name: 'Investment Analysis', icon: TrendingUp },
+        { name: 'Risk Management', icon: Shield },
+        { name: 'Budget Planning', icon: Target },
+        { name: 'Financial Reporting', icon: FileText },
+        { name: 'Valuation Methods', icon: Calculator },
       ]
     },
     operations: {
@@ -39,12 +39,12 @@ const Skills = () => {
       icon: Settings,
       color: 'bg-green-100 text-green-600',
       skills: [
-        { name: 'Process Optimization', level: 93, icon: Zap },
-        { name: 'Project Management', level: 89, icon: Target },
-        { name: 'Quality Control', level: 86, icon: Shield },
-        { name: 'Supply Chain', level: 84, icon: Globe },
-        { name: 'Performance Metrics', level: 91, icon: BarChart3 },
-        { name: 'Change Management', level: 82, icon: Settings },
+        { name: 'Process Optimization', icon: Zap },
+        { name: 'Project Management', icon: Target },
+        { name: 'Quality Control', icon: Shield },
+        { name: 'Supply Chain', icon: Globe },
+        { name: 'Performance Metrics', icon: BarChart3 },
+        { name: 'Change Management', icon: Settings },
       ]
     },
     tools: {
@@ -52,12 +52,12 @@ const Skills = () => {
       icon: Settings,
       color: 'bg-purple-100 text-purple-600',
       skills: [
-        { name: 'Excel/Google Sheets', level: 95, icon: FileText },
-        { name: 'Power BI/Tableau', level: 88, icon: BarChart3 },
-        { name: 'SQL', level: 82, icon: Settings },
-        { name: 'Python/R', level: 78, icon: Settings },
-        { name: 'SAP/ERP Systems', level: 85, icon: Settings },
-        { name: 'Microsoft Office Suite', level: 92, icon: FileText },
+        { name: 'Excel/Google Sheets', icon: FileText },
+        { name: 'Power BI/Tableau', icon: BarChart3 },
+        { name: 'SQL', icon: Settings },
+        { name: 'Python/R', icon: Settings },
+        { name: 'SAP/ERP Systems', icon: Settings },
+        { name: 'Microsoft Office Suite', icon: FileText },
       ]
     },
     soft: {
@@ -65,12 +65,12 @@ const Skills = () => {
       icon: Users,
       color: 'bg-orange-100 text-orange-600',
       skills: [
-        { name: 'Leadership', level: 90, icon: Users },
-        { name: 'Communication', level: 94, icon: MessageSquare },
-        { name: 'Strategic Thinking', level: 89, icon: Lightbulb },
-        { name: 'Problem Solving', level: 91, icon: Target },
-        { name: 'Team Collaboration', level: 93, icon: Users },
-        { name: 'Adaptability', level: 87, icon: Zap },
+        { name: 'Leadership', icon: Users },
+        { name: 'Communication', icon: MessageSquare },
+        { name: 'Strategic Thinking', icon: Lightbulb },
+        { name: 'Problem Solving', icon: Target },
+        { name: 'Team Collaboration', icon: Users },
+        { name: 'Adaptability', icon: Zap },
       ]
     }
   }
@@ -95,20 +95,6 @@ const Skills = () => {
         ease: 'easeOut',
       },
     },
-  }
-
-  const getLevelColor = (level: number) => {
-    if (level >= 90) return 'bg-green-500'
-    if (level >= 80) return 'bg-blue-500'
-    if (level >= 70) return 'bg-yellow-500'
-    return 'bg-red-500'
-  }
-
-  const getLevelText = (level: number) => {
-    if (level >= 90) return 'Expert'
-    if (level >= 80) return 'Advanced'
-    if (level >= 70) return 'Intermediate'
-    return 'Beginner'
   }
 
   return (
@@ -157,44 +143,19 @@ const Skills = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+            className="flex flex-wrap gap-3 sm:gap-4"
           >
             {skillCategories[activeTab as keyof typeof skillCategories].skills.map((skill, index) => (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="card group cursor-pointer"
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center gap-2 sm:gap-3 px-4 py-2.5 rounded-full border border-neutral-200 bg-white shadow-sm text-sm sm:text-base font-medium text-neutral-800"
               >
-                <div className="flex items-center justify-between mb-3 sm:mb-4">
-                  <div className="flex items-center space-x-2 sm:space-x-3">
-                    <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center ${skillCategories[activeTab as keyof typeof skillCategories].color}`}>
-                      <skill.icon size={16} className="sm:w-5 sm:h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-neutral-900 text-sm sm:text-base">{skill.name}</h3>
-                      <p className="text-xs sm:text-sm text-neutral-500">{getLevelText(skill.level)}</p>
-                    </div>
-                  </div>
-                  <span className="text-base sm:text-lg font-bold text-neutral-700">{skill.level}%</span>
-                </div>
-
-                {/* Progress Bar */}
-                <div className="w-full bg-neutral-200 rounded-full h-2 mb-2">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${skill.level}%` }}
-                    transition={{ duration: 1, delay: index * 0.1 }}
-                    className={`h-2 rounded-full ${getLevelColor(skill.level)}`}
-                  />
-                </div>
-
-                {/* Skill Description */}
-                <p className="text-xs sm:text-sm text-neutral-600 group-hover:text-neutral-700 transition-colors">
-                  {activeTab === 'finance' && 'Advanced financial analysis and modeling expertise'}
-                  {activeTab === 'operations' && 'Proven track record in operational excellence'}
-                  {activeTab === 'tools' && 'Proficient in industry-standard tools and technologies'}
-                  {activeTab === 'soft' && 'Strong interpersonal and leadership capabilities'}
-                </p>
+                <span className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center ${skillCategories[activeTab as keyof typeof skillCategories].color}`}>
+                  <skill.icon size={14} className="sm:w-4 sm:h-4" />
+                </span>
+                <span>{skill.name}</span>
               </motion.div>
             ))}
           </motion.div>

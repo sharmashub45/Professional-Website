@@ -32,7 +32,7 @@ export default function Home() {
             </div>
             <div className="flex items-center space-x-6">
               <a 
-                href="https://linkedin.com/in/shubham-sharma" 
+                href="https://www.linkedin.com/in/shubham-sharma-s20/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-neutral-400 hover:text-white transition-colors"
@@ -40,7 +40,7 @@ export default function Home() {
                 LinkedIn
               </a>
               <a 
-                href="mailto:shubham.sharma@email.com"
+                href="mailto:sharma.shubham0210@gmail.com"
                 className="text-neutral-400 hover:text-white transition-colors"
               >
                 Email

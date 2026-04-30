@@ -1,14 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { GraduationCap, Award, Calendar, MapPin, ExternalLink } from 'lucide-react'
+import { GraduationCap, Award, ExternalLink } from 'lucide-react'
 
 const Education = () => {
   const education = [
     {
       id: 1,
       degree: 'Master of Business Administration (MBA)',
-      specialization: 'Finance',
+      specialization: 'Finance and Strategy & Consulting (Minor)',
       institution: 'K J Somaiya Institute of Management',
       location: 'Mumbai, India',
       period: '2017 - 2019',
@@ -58,57 +58,73 @@ const Education = () => {
   const certifications = [
     {
       id: 1,
-      name: 'Chartered Financial Analyst (CFA)',
-      issuer: 'CFA Institute',
-      date: '2021',
-      status: 'Level 1 Passed',
-      description: 'Comprehensive understanding of investment analysis, portfolio management, and ethical standards in finance.',
-      skills: ['Investment Analysis', 'Portfolio Management', 'Ethics', 'Quantitative Methods']
+      name: 'Data Analytics',
+      issuer: 'Professional Certification',
+      date: 'Completed',
+      status: 'Verified',
+      description: 'Applied data analysis concepts to business and finance use cases.',
+      skills: ['Data Analytics', 'Business Insights', 'Reporting'],
+      credentialUrl: '/certifications/certificate-data-analytics.pdf'
     },
     {
       id: 2,
-      name: 'Project Management Professional (PMP)',
-      issuer: 'Project Management Institute',
-      date: '2020',
-      status: 'Certified',
-      description: 'Demonstrated competency in project management processes, tools, and techniques.',
-      skills: ['Project Planning', 'Risk Management', 'Stakeholder Management', 'Quality Control']
+      name: 'VBA-Excel',
+      issuer: 'Professional Certification',
+      date: 'Completed',
+      status: 'Verified',
+      description: 'Built practical VBA skills for automating workflows and improving productivity.',
+      skills: ['VBA', 'Automation', 'Excel Macros'],
+      credentialUrl: '/certifications/certificate-vba.pdf'
     },
     {
       id: 3,
-      name: 'Six Sigma Green Belt',
-      issuer: 'American Society for Quality',
-      date: '2019',
-      status: 'Certified',
-      description: 'Process improvement methodology focusing on reducing defects and improving quality.',
-      skills: ['Process Improvement', 'Statistical Analysis', 'Quality Control', 'DMAIC Methodology']
+      name: 'Investment Banking',
+      issuer: 'Professional Certification',
+      date: 'Completed',
+      status: 'Verified',
+      description: 'Covered core investment banking and valuation concepts for financial decision-making.',
+      skills: ['Investment Banking', 'Valuation', 'Corporate Finance'],
+      credentialUrl: '/certifications/certificate-investment-banking.pdf'
     },
     {
       id: 4,
-      name: 'Financial Modeling & Valuation',
-      issuer: 'Corporate Finance Institute',
-      date: '2020',
-      status: 'Completed',
-      description: 'Advanced Excel-based financial modeling techniques for valuation and analysis.',
-      skills: ['Excel Modeling', 'DCF Valuation', 'LBO Modeling', 'M&A Analysis']
+      name: 'Generative AI Mastermind by Outskill',
+      issuer: 'Professional Certification',
+      date: 'Completed',
+      status: 'Verified',
+      description: 'Professional learning certification validating domain-specific knowledge.',
+      skills: ['Professional Development', 'Applied Learning'],
+      credentialUrl: '/certifications/certificate-shubham-sharma.pdf'
     },
     {
       id: 5,
-      name: 'Data Analysis with Python',
-      issuer: 'Coursera - University of Michigan',
-      date: '2021',
-      status: 'Completed',
-      description: 'Comprehensive course on data analysis using Python, pandas, and statistical methods.',
-      skills: ['Python', 'Pandas', 'Statistical Analysis', 'Data Visualization']
+      name: 'IFRS',
+      issuer: 'Professional Certification',
+      date: 'Completed',
+      status: 'Verified',
+      description: 'Demonstrated understanding of IFRS fundamentals and reporting framework.',
+      skills: ['IFRS', 'Financial Reporting', 'Accounting Standards'],
+      credentialUrl: '/certifications/certificate-ifrs.pdf'
     },
     {
       id: 6,
-      name: 'Advanced Excel for Business',
-      issuer: 'LinkedIn Learning',
-      date: '2020',
-      status: 'Completed',
-      description: 'Master advanced Excel functions, pivot tables, and automation for business analysis.',
-      skills: ['Advanced Excel', 'Pivot Tables', 'VBA', 'Data Analysis']
+      name: 'Power BI',
+      issuer: 'Professional Certification',
+      date: 'Completed',
+      status: 'Verified',
+      description: 'Developed skills for building dashboards and visual analytics in Power BI.',
+      skills: ['Power BI', 'Dashboards', 'Data Visualization'],
+      credentialUrl: '/certifications/certificate-power-bi.pdf'
+    },
+    {
+      id: 7,
+      name: 'Financial Modeling & Valuation',
+      issuer: 'Professional Certification',
+      date: 'Completed',
+      status: 'Verified',
+      description: 'Focused on practical financial modeling and valuation for business analysis.',
+      skills: ['Financial Modeling', 'Valuation', 'Excel'],
+      credentialUrl: '/certifications/certificate-fmv.pdf'
     }
   ]
 
@@ -170,65 +186,15 @@ const Education = () => {
                   whileHover={{ scale: 1.02 }}
                   className="card"
                 >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-neutral-900 mb-1">
-                        {edu.degree}
-                      </h4>
-                      <p className="text-primary-600 font-medium mb-2">
-                        {edu.specialization}
-                      </p>
-                      <p className="text-lg font-medium text-neutral-700 mb-2">
-                        {edu.institution}
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-sm font-semibold text-primary-600 bg-primary-100 px-3 py-1 rounded-full">
-                        {edu.gpa}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 mb-4">
-                    <div className="flex items-center space-x-1">
-                      <Calendar size={16} />
-                      <span>{edu.period}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <MapPin size={16} />
-                      <span>{edu.location}</span>
-                    </div>
-                  </div>
-
-                  <p className="text-neutral-600 mb-4">{edu.description}</p>
-
-                  <div className="space-y-3">
-                    <div>
-                      <h5 className="font-semibold text-neutral-900 mb-2">Key Achievements:</h5>
-                      <ul className="space-y-1">
-                        {edu.achievements.map((achievement, achievementIndex) => (
-                          <li key={achievementIndex} className="flex items-start space-x-2 text-sm text-neutral-600">
-                            <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mt-2 flex-shrink-0"></div>
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h5 className="font-semibold text-neutral-900 mb-2">Relevant Coursework:</h5>
-                      <div className="flex flex-wrap gap-2">
-                        {edu.relevant_courses.map((course, courseIndex) => (
-                          <span
-                            key={courseIndex}
-                            className="px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full text-sm"
-                          >
-                            {course}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+                  <h4 className="text-lg font-semibold text-neutral-900 mb-2">
+                    {edu.degree}
+                  </h4>
+                  <p className="text-primary-600 font-medium mb-1">
+                    {edu.specialization}
+                  </p>
+                  <p className="text-neutral-700">
+                    {edu.institution}
+                  </p>
                 </motion.div>
               ))}
             </motion.div>
@@ -275,6 +241,16 @@ const Education = () => {
                         </span>
                       ))}
                     </div>
+
+                    <a
+                      href={cert.credentialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 mt-3 text-sm text-primary-600 hover:text-primary-700 font-medium"
+                    >
+                      <ExternalLink size={16} />
+                      View Certificate
+                    </a>
                   </motion.div>
                 ))}
               </div>
@@ -287,7 +263,7 @@ const Education = () => {
                 </p>
                 <div className="flex items-center space-x-2 text-primary-600">
                   <ExternalLink size={16} />
-                  <span className="text-sm font-medium">Currently pursuing CFA Level 2</span>
+                  <span className="text-sm font-medium">Actively adding certifications in analytics and finance tools</span>
                 </div>
               </motion.div>
             </motion.div>

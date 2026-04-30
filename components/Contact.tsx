@@ -13,6 +13,7 @@ const Contact = () => {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState('')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -25,18 +26,41 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({ name: '', email: '', subject: '', message: '' })
-    }, 3000)
+    setSubmitError('')
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/b8802c6e71e2527cb2d9e9da391c863f', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `Portfolio Contact: ${formData.subject}`,
+          _template: 'table',
+          _captcha: 'false',
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form')
+      }
+
+      setIsSubmitted(true)
+
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      }, 3000)
+    } catch (error) {
+      setSubmitError('Failed to send your message. Please try again or email me directly.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleDownloadCV = () => {
@@ -50,15 +74,15 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'shubham.sharma@email.com',
-      link: 'mailto:shubham.sharma@email.com',
+      value: 'sharma.shubham0210@gmail.com',
+      link: 'mailto:sharma.shubham0210@gmail.com',
       description: 'Send me an email anytime'
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+91 98765 43210',
-      link: 'tel:+919876543210',
+      value: '+91-7016907221',
+      link: 'tel:+917016907221',
       description: 'Mon-Fri from 9am to 6pm'
     },
     {
@@ -71,8 +95,8 @@ const Contact = () => {
     {
       icon: Linkedin,
       title: 'LinkedIn',
-      value: 'linkedin.com/in/shubham-sharma',
-      link: 'https://linkedin.com/in/shubham-sharma',
+      value: 'linkedin.com/in/shubham-sharma-s20',
+      link: 'https://www.linkedin.com/in/shubham-sharma-s20/',
       description: 'Connect with me professionally'
     }
   ]
@@ -136,6 +160,11 @@ const Contact = () => {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                  {submitError && (
+                    <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+                      {submitError}
+                    </p>
+                  )}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
