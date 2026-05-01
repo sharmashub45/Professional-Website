@@ -1,9 +1,20 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { GraduationCap, Award, ExternalLink } from 'lucide-react'
+import { useState } from 'react'
+import { GraduationCap, Award, ExternalLink, X } from 'lucide-react'
 
 const Education = () => {
+  const [selectedCertificate, setSelectedCertificate] = useState<null | {
+    name: string
+    url: string
+  }>(null)
+
+  const getAssetPath = (path: string) => {
+    const basePath = process.env.NODE_ENV === 'production' ? '/Professional-Website' : ''
+    return `${basePath}${path}`
+  }
+
   const education = [
     {
       id: 1,
@@ -242,15 +253,19 @@ const Education = () => {
                       ))}
                     </div>
 
-                    <a
-                      href={cert.credentialUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setSelectedCertificate({
+                          name: cert.name,
+                          url: getAssetPath(cert.credentialUrl)
+                        })
+                      }
                       className="inline-flex items-center gap-2 mt-3 text-sm text-primary-600 hover:text-primary-700 font-medium"
                     >
                       <ExternalLink size={16} />
                       View Certificate
-                    </a>
+                    </button>
                   </motion.div>
                 ))}
               </div>
@@ -270,6 +285,37 @@ const Education = () => {
           </div>
         </motion.div>
       </div>
+
+      {selectedCertificate && (
+        <div
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm p-4 sm:p-6"
+          onClick={() => setSelectedCertificate(null)}
+        >
+          <div
+            className="bg-white rounded-2xl w-full max-w-5xl h-[85vh] mx-auto overflow-hidden shadow-2xl flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-neutral-200">
+              <h4 className="text-sm sm:text-base font-semibold text-neutral-900 truncate pr-4">
+                {selectedCertificate.name}
+              </h4>
+              <button
+                type="button"
+                onClick={() => setSelectedCertificate(null)}
+                className="p-2 rounded-full hover:bg-neutral-100 transition-colors"
+                aria-label="Close certificate viewer"
+              >
+                <X size={18} />
+              </button>
+            </div>
+            <iframe
+              src={selectedCertificate.url}
+              title={`${selectedCertificate.name} certificate`}
+              className="w-full flex-1"
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }
